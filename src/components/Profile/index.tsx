@@ -1,12 +1,18 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 
+// components
+import { Avatar } from '../Avatar';
+
 // styles
 import { styles } from './styles';
 
 export function Profile() {
     return (
         <View style={styles.container} >
+            <Avatar 
+                urlImage="https://github.com/Jefferson-Bueno-Da-Silva.png"
+            />
             <View>
                 
                 <View style={styles.user} >                
