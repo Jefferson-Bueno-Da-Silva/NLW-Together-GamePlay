@@ -3,7 +3,7 @@ import DuelSvg from '../assets/duel.svg';
 import FunSvg from '../assets/fun.svg';
 import TrainingSvg from '../assets/training.svg';
 
-export const Categories =[
+export const categories =[
     {
         id : '1',
         title: 'Rankeada',
