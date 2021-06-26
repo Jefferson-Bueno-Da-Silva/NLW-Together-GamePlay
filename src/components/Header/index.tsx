@@ -5,6 +5,7 @@ import { View, Text } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { BorderlessButton } from 'react-native-gesture-handler';
 import { Feather } from '@expo/vector-icons';
+import { useNavigation } from '@react-navigation/native';
 
 // components
 
@@ -20,14 +21,20 @@ type Props = {
 }
 
 export function Header({ title, action }: Props){
+    const navigation = useNavigation();
+
     const { secondary100, secondary40, heading } = theme.colors;
+
+    function handleGoBack(){
+        navigation.goBack();
+    }
 
     return (
         <LinearGradient
             style={styles.container}
             colors={[secondary100, secondary40]}
         >
-            <BorderlessButton>
+            <BorderlessButton onPress={handleGoBack} >
                 <Feather
                     name="arrow-left"
                     size={24}
@@ -41,7 +48,9 @@ export function Header({ title, action }: Props){
 
             {
                 action &&
-                <View></View>
+                <View>
+                    { action }
+                </View>
             }
 
         </LinearGradient>
