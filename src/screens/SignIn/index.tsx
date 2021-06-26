@@ -10,6 +10,7 @@ import IllustrationImg from '../../assets/illustration.png'
 
 // components
 import { ButtonIcon } from '../../components/ButtonIcon';
+import { Background } from '../../components/Background';
 
 // styles
 import { styles } from './styles';
@@ -24,34 +25,36 @@ export function SignIn() {
         navigation.navigate('Home');
     }
     return (
-        <View style={styles.container} >
+        <Background>
+            <View style={styles.container} >
 
-            <Image 
-                style={styles.image}
-                source={IllustrationImg}
-                resizeMode="stretch"
-            />
-
-            <View style={styles.content}>
-
-                <Text style={styles.title}>
-                    Conecte-se {'\n'}
-                    e organize suas {'\n'}
-                    jogatinas
-                </Text>
-
-                <Text style={styles.subTitle}>
-                    Crie grupos para jogar seus games {`\n`}
-                    favoritos com seus amigos
-                </Text>
-
-                <ButtonIcon 
-                    title="Entrar Com discord"
-                    onPress={HandleSignIn}
+                <Image 
+                    style={styles.image}
+                    source={IllustrationImg}
+                    resizeMode="stretch"
                 />
 
-            </View>
+                <View style={styles.content}>
 
-        </View>
+                    <Text style={styles.title}>
+                        Conecte-se {'\n'}
+                        e organize suas {'\n'}
+                        jogatinas
+                    </Text>
+
+                    <Text style={styles.subTitle}>
+                        Crie grupos para jogar seus games {`\n`}
+                        favoritos com seus amigos
+                    </Text>
+
+                    <ButtonIcon 
+                        title="Entrar Com discord"
+                        onPress={HandleSignIn}
+                    />
+
+                </View>
+
+            </View>
+        </Background>
     );
 }
